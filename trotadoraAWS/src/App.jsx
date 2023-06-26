@@ -1,11 +1,9 @@
 import './App.css'
-
+import RandomNumberGenerator from './components/RandomNumberGenerator'
 function App() {
   return (
     <>
-    <h1>
-      Hola!
-    </h1>
+    <RandomNumberGenerator></RandomNumberGenerator>
     </>
   )
 }
