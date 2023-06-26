@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 const RandomNumberGenerator = () => {
   const [ritmo, setRitmo] = useState('');
@@ -35,13 +36,24 @@ const RandomNumberGenerator = () => {
   };
 
   return (
-    <div>
-      <label htmlFor="min">Ritmo Cardiaco (lat/min)</label>
-      <input type="number" id="min" value={ritmo} onChange={handleRitmoChange} />
-      <br />
-      <br />
-      <button onClick={postRitmo}>Enviar Valor</button>
-    </div>
+    <Container>
+      <Row className="mt-4">
+        <Col md={6} className="mx-auto">
+          <Form>
+            <Form.Group controlId="ritmo">
+              <Form.Label>Ritmo Cardiaco (lat/min)</Form.Label>
+              <Form.Control type="number" value={ritmo} onChange={handleRitmoChange} />
+            </Form.Group>
+            <Button variant="primary" onClick={postRitmo} className="mt-2">Enviar Valor</Button>
+          </Form>
+        </Col>
+      </Row>
+      <Row className="mt-4">
+        <Col md={6} className="mx-auto">
+          <img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2022/01/31/203310_1353836.gif" alt="Máquina trotadora" style={{ width: '100%', height: 'auto' }}/>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
